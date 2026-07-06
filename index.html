@@ -19,7 +19,7 @@
         --muted: #9aa0a6;
         --accent: #00ffb4;
         --accent-hover: #00e0a0;
-        --max: 720px;
+        --max: 920px;
       }
 
       * {
@@ -143,6 +143,243 @@
         text-decoration: none;
       }
 
+      .hero {
+        padding: 28px;
+        margin-bottom: 24px;
+        background:
+          linear-gradient(135deg, rgba(0, 255, 180, 0.14), transparent 52%),
+          var(--surface);
+        border: 1px solid rgba(0, 255, 180, 0.2);
+        border-radius: 20px;
+      }
+
+      .hero-copy h2 {
+        margin: 0 0 12px;
+        font-size: clamp(1.6rem, 4vw, 2.4rem);
+        line-height: 1.12;
+        letter-spacing: -0.035em;
+      }
+
+      .hero-copy p {
+        max-width: 620px;
+        margin: 0 0 20px;
+        color: var(--muted);
+        font-size: 1rem;
+      }
+
+      .actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        align-items: center;
+      }
+
+      .button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 42px;
+        padding: 10px 16px;
+        border-radius: 999px;
+        border: 1px solid rgba(0, 255, 180, 0.28);
+        font-weight: 700;
+        text-decoration: none;
+        user-select: none;
+        -webkit-user-select: none;
+      }
+
+      .button:hover {
+        text-decoration: none;
+      }
+
+      .button.primary {
+        color: #071512;
+        background: var(--accent);
+      }
+
+      .button.primary:hover {
+        color: #071512;
+        background: var(--accent-hover);
+      }
+
+      .button.secondary {
+        color: var(--text);
+        background: rgba(255, 255, 255, 0.04);
+      }
+
+      .button.secondary:hover {
+        color: var(--text);
+      }
+
+      .button.disabled {
+        color: var(--muted);
+        border-color: var(--border);
+        background: rgba(255, 255, 255, 0.03);
+        cursor: not-allowed;
+        opacity: 0.72;
+      }
+
+      .store-button {
+        gap: 10px;
+        min-height: 44px;
+        min-width: auto;
+        padding: 8px 16px 8px 12px;
+        color: #f1f3f4;
+        background: #f4f4f4;
+        border: 0;
+        border-radius: 999px;
+        box-shadow: 0 8px 18px rgba(0, 0, 0, 0.14);
+        opacity: 0.62;
+        user-select: none;
+        -webkit-user-select: none;
+      }
+
+      .button.disabled.store-button {
+        color: #f1f3f4;
+        cursor: pointer;
+      }
+
+      .store-button:hover {
+        color: #f1f3f4;
+      }
+
+      .store-button .store-copy,
+      .store-button small,
+      .store-button strong,
+      .store-button:hover .store-copy,
+      .store-button:hover small,
+      .store-button:hover strong {
+        color: #f1f3f4;
+      }
+
+      .store-button img {
+        width: 40px;
+        height: 30px;
+        object-fit: contain;
+        flex-shrink: 0;
+      }
+
+      .store-copy {
+        text-align: left;
+        line-height: 1.08;
+      }
+
+      .store-copy small {
+        display: block;
+        margin-bottom: 0;
+        font-size: 0.68rem;
+        font-weight: 600;
+      }
+
+      .store-copy strong {
+        display: block;
+        font-size: 0.92rem;
+        font-weight: 600;
+        letter-spacing: -0.02em;
+      }
+
+      .review-note {
+        width: 100%;
+        margin: 2px 0 0;
+        color: var(--muted);
+        font-size: 0.8125rem;
+      }
+
+      .open-source-note {
+        margin: 0 0 24px;
+        padding: 18px 20px;
+        background: rgba(255, 255, 255, 0.035);
+        border: 1px solid var(--border);
+        border-radius: 14px;
+      }
+
+      .open-source-note h2 {
+        margin: 0 0 6px;
+        font-size: 1.05rem;
+      }
+
+      .open-source-note p {
+        margin: 0;
+        color: var(--muted);
+      }
+
+      .features {
+        margin: 0 0 24px;
+      }
+
+      .section-heading {
+        margin: 0 0 14px;
+        font-size: 1.25rem;
+      }
+
+      .feature-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 12px;
+      }
+
+      .feature-card {
+        min-height: 150px;
+        padding: 18px;
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: 14px;
+        position: relative;
+        overflow: hidden;
+        transition:
+          transform 0.22s ease,
+          border-color 0.22s ease,
+          box-shadow 0.22s ease,
+          background 0.22s ease;
+      }
+
+      .feature-card::before {
+        content: '';
+        position: absolute;
+        inset: -1px;
+        background: radial-gradient(circle at top left, rgba(0, 255, 180, 0.18), transparent 52%);
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.22s ease;
+      }
+
+      .feature-card:hover {
+        transform: translateY(-5px);
+        border-color: rgba(0, 255, 180, 0.38);
+        background: #1d1d1d;
+        box-shadow:
+          0 14px 36px rgba(0, 0, 0, 0.32),
+          0 0 28px rgba(0, 255, 180, 0.1);
+      }
+
+      .feature-card:hover::before {
+        opacity: 1;
+      }
+
+      .feature-card h3 {
+        position: relative;
+        margin: 0 0 8px;
+        font-size: 1rem;
+      }
+
+      .feature-card p {
+        position: relative;
+        margin: 0;
+        color: var(--muted);
+        font-size: 0.9rem;
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .feature-card,
+        .feature-card::before {
+          transition: none;
+        }
+
+        .feature-card:hover {
+          transform: none;
+        }
+      }
+
       .card {
         background: var(--surface);
         border: 1px solid var(--border);
@@ -219,6 +456,18 @@
           flex-direction: column;
         }
 
+        .hero {
+          padding: 24px 18px;
+        }
+
+        .button {
+          width: 100%;
+        }
+
+        .feature-grid {
+          grid-template-columns: 1fr;
+        }
+
         .card {
           padding: 22px 18px;
         }
@@ -240,6 +489,129 @@
           <button type="button" data-set-lang="en">EN</button>
         </div>
       </header>
+
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-copy">
+          <div data-lang="tr" class="visible">
+            <h2 id="hero-title">Sekmeleri yenileyin. Değişiklikleri kaçırmayın.</h2>
+            <p>
+              Page Refresh Pro; otomatik yenileme, XHR tıklama ve sayfa değişikliği izleme özelliklerini
+              tek bir gizlilik odaklı Chrome eklentisinde bir araya getirir.
+            </p>
+          </div>
+          <div data-lang="en">
+            <h2>Refresh tabs. Never miss page changes.</h2>
+            <p>
+              Page Refresh Pro combines auto-refresh, XHR target clicking, and page-change monitoring in
+              one privacy-first Chrome extension.
+            </p>
+          </div>
+          <div class="actions">
+            <a class="button primary" href="https://github.com/Liqutch/page-refresh-pro/releases" target="_blank" rel="noopener">
+              <span data-lang="tr" class="visible">GitHub ile yükle</span>
+              <span data-lang="en">Install from GitHub</span>
+            </a>
+            <span class="button disabled store-button" aria-disabled="true">
+              <img
+                src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/Google_Chrome_Web_Store_icon_2022.svg/960px-Google_Chrome_Web_Store_icon_2022.svg.png"
+                width="86"
+                height="64"
+                alt=""
+              />
+              <span class="store-copy" data-lang="tr" class="visible">
+                <small>Yakında</small>
+                <strong>Chrome Web Store'da</strong>
+              </span>
+              <span class="store-copy" data-lang="en">
+                <small>Coming soon to the</small>
+                <strong>Chrome Web Store</strong>
+              </span>
+            </span>
+            <p class="review-note">
+              <span data-lang="tr" class="visible">Eklenti henüz incelemede. Mağaza bağlantısı yayınlanınca aktif edilecek.</span>
+              <span data-lang="en">The extension is currently under review. The store link will be enabled after approval.</span>
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="open-source-note">
+        <div data-lang="tr" class="visible">
+          <h2>Açık kaynak ve doğrulanabilir</h2>
+          <p>
+            Page Refresh Pro'nun kaynak kodu <a href="https://github.com/Liqutch/page-refresh-pro" target="_blank" rel="noopener">GitHub'da yayınlanır</a>. İsterseniz kodu inceleyebilir,
+            nasıl çalıştığını görebilir ve kendiniz derleyebilirsiniz.
+          </p>
+        </div>
+        <div data-lang="en">
+          <h2>Open source and verifiable</h2>
+          <p>
+            Page Refresh Pro's source code is <a href="https://github.com/Liqutch/page-refresh-pro" target="_blank" rel="noopener">published on GitHub</a>. You can inspect the code,
+            see how it works, and build it yourself.
+          </p>
+        </div>
+      </section>
+
+      <section id="features" class="features" aria-labelledby="features-title-tr">
+        <div data-lang="tr" class="visible">
+          <h2 id="features-title-tr" class="section-heading">Öne çıkan özellikler</h2>
+          <div class="feature-grid">
+            <article class="feature-card">
+              <h3>Esnek otomatik yenileme</h3>
+              <p>Sabit, rastgele veya özel sürelerle sekmeleri yenileyin. XHR modunda 0,1 saniyeden başlayan hassas aralıklar kullanın.</p>
+            </article>
+            <article class="feature-card">
+              <h3>XHR hedef tıklama</h3>
+              <p>Tam sayfa yenilemeden, seçtiğiniz buton veya öğeye periyodik tıklayarak sayfanın kendi güncelleme akışını tetikleyin.</p>
+            </article>
+            <article class="feature-card">
+              <h3>Sayfa izleme</h3>
+              <p>Anahtar kelime bulunduğunda, kaybolduğunda veya sayfa içeriği değiştiğinde bildirim alın ve değişen alanı vurgulayın.</p>
+            </article>
+            <article class="feature-card">
+              <h3>Alan adına özel ayarlar</h3>
+              <p>Her site için yenileme aralığı, izleme modu ve tercihleri ayrı ayrı hatırlayın.</p>
+            </article>
+            <article class="feature-card">
+              <h3>Görsel geri sayım</h3>
+              <p>Sayfa üzerinde bir zamanlayıcıyla bir sonraki yenilemeye ne kadar kaldığını görün.</p>
+            </article>
+            <article class="feature-card">
+              <h3>Gizlilik odaklı</h3>
+              <p>Harici sunucu, hesap sistemi veya analytics yoktur. Ayarlar yalnızca cihazınızda saklanır.</p>
+            </article>
+          </div>
+        </div>
+        <div data-lang="en">
+          <h2 id="features-title-en" class="section-heading">Key features</h2>
+          <div class="feature-grid">
+            <article class="feature-card">
+              <h3>Flexible auto-refresh</h3>
+              <p>Refresh tabs with fixed, random, or custom intervals. Use precise intervals from 0.1 seconds in XHR mode.</p>
+            </article>
+            <article class="feature-card">
+              <h3>XHR target clicking</h3>
+              <p>Trigger a page's own update flow by periodically clicking a selected button or element without a full reload.</p>
+            </article>
+            <article class="feature-card">
+              <h3>Page monitoring</h3>
+              <p>Get notified when a keyword appears, disappears, or page content changes, with optional highlighting.</p>
+            </article>
+            <article class="feature-card">
+              <h3>Per-domain settings</h3>
+              <p>Remember refresh intervals, monitoring modes, and preferences separately for each site.</p>
+            </article>
+            <article class="feature-card">
+              <h3>Visual countdown</h3>
+              <p>Show an on-page timer so you can see exactly when the next refresh will happen.</p>
+            </article>
+            <article class="feature-card">
+              <h3>Privacy-first</h3>
+              <p>No external servers, accounts, or analytics. Settings are stored only on your device.</p>
+            </article>
+          </div>
+        </div>
+      </section>
 
       <nav class="toc" aria-label="İçindekiler" id="toc-nav">
         <a href="#privacy" id="link-privacy">Gizlilik Politikası</a>
@@ -563,9 +935,9 @@
           tagline: 'Otomatik sekme yenileme ve sayfa izleme eklentisi',
           navPrivacy: 'Gizlilik Politikası',
           navTerms: 'Hizmet Koşulları',
-          documentTitle: 'Page Refresh Pro — Gizlilik ve Koşullar',
+          documentTitle: 'Page Refresh Pro — Otomatik Yenileme ve Sayfa İzleme',
           metaDescription:
-            'Page Refresh Pro Chrome eklentisi gizlilik politikası ve hizmet koşulları.',
+            'Page Refresh Pro; otomatik sekme yenileme, XHR hedef tıklama ve sayfa değişikliği izleme için gizlilik odaklı Chrome eklentisi.',
           langGroupLabel: 'Dil seçimi',
           tocLabel: 'İçindekiler',
         },
@@ -573,9 +945,9 @@
           tagline: 'Auto-refresh tabs and monitor page changes',
           navPrivacy: 'Privacy Policy',
           navTerms: 'Terms of Service',
-          documentTitle: 'Page Refresh Pro — Privacy & Terms',
+          documentTitle: 'Page Refresh Pro — Auto Refresh and Page Monitoring',
           metaDescription:
-            'Privacy Policy and Terms of Service for the Page Refresh Pro Chrome extension.',
+            'Page Refresh Pro is a privacy-first Chrome extension for auto-refreshing tabs, clicking XHR targets, and monitoring page changes.',
           langGroupLabel: 'Language',
           tocLabel: 'Contents',
         },

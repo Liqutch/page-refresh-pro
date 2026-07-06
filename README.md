@@ -26,6 +26,24 @@ npm run build
 
 Chrome'da `chrome://extensions` → **Developer mode** → **Load unpacked** → `dist` klasörünü seçin.
 
+### Release zip ile kurulum (kaynak kod derlemeden)
+
+[Releases](https://github.com/Liqutch/page-refresh-pro/releases) sayfasından `.zip` indirip kurabilirsiniz:
+
+1. Zip'i bir klasöre çıkarın.
+2. Çıkan klasörde **doğrudan** `manifest.json` olmalı (içinde bir `dist` alt klasörü olmamalı).
+3. `chrome://extensions` → **Geliştirici modu** → **Paketlenmemiş öğe yükle** → o klasörü seçin.
+
+> **Vite / localhost:5173 hatası alıyorsanız:** Zip muhtemelen `npm run dev` çıktısından yapılmıştır. Dev sunucusu çalışırken oluşan `dist` dağıtılamaz. Yayıncı `npm run package` ile üretilmiş zip kullanmalıdır.
+
+Yayıncılar için:
+
+```bash
+npm run package
+```
+
+Bu komut production build alır ve kökünde `manifest.json` olan `page-refresh-pro-v1.0.0.zip` üretir.
+
 Geliştirme modu:
 
 ```bash
@@ -79,6 +97,8 @@ npm run build
 ```
 
 Load the `dist` folder via `chrome://extensions` → Developer mode → Load unpacked.
+
+Download the release `.zip`, extract it, and load the folder that **directly contains** `manifest.json`. If you see a Vite / `localhost:5173` error, the zip was built from dev mode — use a release zip from `npm run package` or build from source.
 
 ### License
 
