@@ -42,7 +42,7 @@ src/
   popup/          Eklenti popup arayüzü
   options/        Ayarlar, hizmet koşulları, gizlilik
   shared/         Tipler, i18n, depolama, mesajlaşma
-public/icons/     SVG kaynak + üretilen PNG ikonlar
+public/icons/     PNG ikonlar (logo.png kaynağından)
 index.html        GitHub Pages: gizlilik ve hizmet koşulları
 ```
 
