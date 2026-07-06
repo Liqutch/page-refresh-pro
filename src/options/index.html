@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Page Refresh Pro</title>
+    <style>
+      html {
+        background: #121212;
+        color-scheme: dark;
+      }
+    </style>
+    <link rel="stylesheet" href="./options.css" />
+    <script type="module" src="./options.ts"></script>
+  </head>
+  <body>
+    <div class="options-shell">
+      <header class="options-header">
+        <div class="options-brand">
+          <img class="options-logo" width="44" height="44" alt="" />
+          <div>
+            <h1 data-i18n="optionsTitle">Page Refresh Pro Ayarları</h1>
+            <p class="options-subtitle" data-i18n="optionsSubtitle">Eklenti tercihlerini yönetin</p>
+          </div>
+        </div>
+      </header>
+
+      <main class="options-main">
+        <section class="settings-card">
+          <div class="settings-card-head">
+            <h2 data-i18n="sectionGeneral">Genel</h2>
+          </div>
+          <div class="settings-card-body">
+            <div class="setting-row">
+              <div class="setting-copy">
+                <strong data-i18n="languageLabel">Dil</strong>
+                <small data-i18n="languageDesc">Arayüz dili. Kaydettikten sonra popup da güncellenir.</small>
+              </div>
+              <div class="lang-dropdown" id="languageDropdown">
+                <button
+                  id="languageTrigger"
+                  class="lang-dropdown-trigger"
+                  type="button"
+                  aria-haspopup="listbox"
+                  aria-expanded="false"
+                  aria-controls="languageMenu"
+                >
+                  <span class="lang-dropdown-value">Türkçe</span>
+                  <svg class="lang-dropdown-chevron ui-icon" viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="m6 9 6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                  </svg>
+                </button>
+                <ul id="languageMenu" class="lang-dropdown-menu" role="listbox" aria-label="Language" hidden>
+                  <li class="lang-dropdown-option" role="option" data-lang="tr" data-i18n="langTr">Türkçe</li>
+                  <li class="lang-dropdown-option" role="option" data-lang="en" data-i18n="langEn">English</li>
+                </ul>
+                <select id="language" class="sr-only" tabindex="-1" aria-hidden="true">
+                  <option value="tr">tr</option>
+                  <option value="en">en</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <div class="coming-soon-card">
+          <div class="coming-soon-icon" aria-hidden="true">
+            <svg class="ui-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 8v4l3 3" />
+              <circle cx="12" cy="12" r="9" />
+            </svg>
+          </div>
+          <p data-i18n="optionsComingSoon">Yakında daha fazla seçenek eklenecek.</p>
+        </div>
+
+        <div class="options-actions">
+          <button id="saveButton" class="save-btn" type="button" data-i18n="saveButton">Kaydet</button>
+          <p id="status" class="save-status" hidden></p>
+        </div>
+      </main>
+
+      <footer class="options-legal">
+        <nav class="legal-nav" aria-label="Legal">
+          <button id="termsToggle" class="legal-link" type="button" aria-expanded="false" data-i18n="sectionTerms">
+            Hizmet Koşulları
+          </button>
+          <span class="legal-sep" aria-hidden="true">·</span>
+          <button id="privacyToggle" class="legal-link" type="button" aria-expanded="false" data-i18n="sectionPrivacy">
+            Gizlilik Şartları
+          </button>
+        </nav>
+
+        <div id="termsBody" class="legal-panel" hidden>
+          <div class="legal-panel-inner terms-scroll">
+            <p class="terms-updated" data-i18n="termsUpdated">Son güncelleme: 5 Temmuz 2026</p>
+            <p data-i18n="termsIntro"></p>
+
+            <h3 data-i18n="termsS1Title"></h3>
+            <p data-i18n="termsS1Body"></p>
+
+            <h3 data-i18n="termsS2Title"></h3>
+            <p data-i18n="termsS2Body"></p>
+
+            <h3 data-i18n="termsS3Title"></h3>
+            <p data-i18n="termsS3Intro"></p>
+            <ul class="terms-list">
+              <li data-i18n="termsS3Item1"></li>
+              <li data-i18n="termsS3Item2"></li>
+              <li data-i18n="termsS3Item3"></li>
+              <li data-i18n="termsS3Item4"></li>
+              <li data-i18n="termsS3Item5"></li>
+            </ul>
+            <p data-i18n="termsS3Note"></p>
+
+            <h3 data-i18n="termsS4Title"></h3>
+            <p data-i18n="termsS4Body"></p>
+
+            <h3 data-i18n="termsS5Title"></h3>
+            <p data-i18n="termsS5Body"></p>
+
+            <h3 data-i18n="termsS6Title"></h3>
+            <p data-i18n="termsS6Body"></p>
+
+            <h3 data-i18n="termsS7Title"></h3>
+            <p data-i18n="termsS7Body"></p>
+
+            <h3 data-i18n="termsS8Title"></h3>
+            <p data-i18n="termsS8Body"></p>
+
+            <h3 data-i18n="termsS9Title"></h3>
+            <p data-i18n="termsS9Body"></p>
+
+            <h3 data-i18n="termsS10Title"></h3>
+            <p data-i18n="termsS10Body"></p>
+
+            <h3 data-i18n="termsS11Title"></h3>
+            <p data-i18n="termsS11Body"></p>
+            <p class="terms-contact"><a href="mailto:me@liqutch.dev">me@liqutch.dev</a></p>
+
+            <p class="terms-closing" data-i18n="termsClosing"></p>
+          </div>
+        </div>
+
+        <div id="privacyBody" class="legal-panel" hidden>
+          <div class="legal-panel-inner terms-scroll">
+            <p class="terms-updated" data-i18n="privacyUpdated">Son güncelleme: 5 Temmuz 2026</p>
+            <p data-i18n="privacyIntro"></p>
+
+            <h3 data-i18n="privacyS1Title"></h3>
+            <p data-i18n="privacyS1Body"></p>
+
+            <h3 data-i18n="privacyS2Title"></h3>
+            <p data-i18n="privacyS2Intro"></p>
+            <ul class="terms-list">
+              <li data-i18n="privacyS2Item1"></li>
+              <li data-i18n="privacyS2Item2"></li>
+              <li data-i18n="privacyS2Item3"></li>
+            </ul>
+            <p data-i18n="privacyS2Note"></p>
+
+            <h3 data-i18n="privacyS3Title"></h3>
+            <p data-i18n="privacyS3Body"></p>
+
+            <h3 data-i18n="privacyS4Title"></h3>
+            <p data-i18n="privacyS4Body"></p>
+
+            <h3 data-i18n="privacyS5Title"></h3>
+            <p data-i18n="privacyS5Body"></p>
+
+            <h3 data-i18n="privacyS7Title"></h3>
+            <p data-i18n="privacyS7Body"></p>
+
+            <h3 data-i18n="privacyS8Title"></h3>
+            <p data-i18n="privacyS8Body"></p>
+            <p class="terms-contact"><a href="mailto:me@liqutch.dev">me@liqutch.dev</a></p>
+
+            <p class="terms-closing" data-i18n="privacyClosing"></p>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>

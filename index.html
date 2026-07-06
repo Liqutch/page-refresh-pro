@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Page Refresh Pro — Chrome extension for auto-refreshing tabs and monitoring page changes. Privacy Policy and Terms of Service."
+    />
+    <title>Page Refresh Pro — Privacy &amp; Terms</title>
+    <link rel="icon" type="image/svg+xml" href="public/icons/icon-128.svg" />
+    <style>
+      :root {
+        --bg: #121212;
+        --surface: #1a1a1a;
+        --surface-2: #222;
+        --border: #2d2d2d;
+        --text: #f5f5f5;
+        --muted: #9aa0a6;
+        --accent: #00ffb4;
+        --accent-hover: #00e0a0;
+        --max: 720px;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        margin: 0;
+        color: var(--text);
+        font: 15px/1.65 Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+        background:
+          radial-gradient(circle at top right, rgba(0, 255, 180, 0.1), transparent 36%),
+          var(--bg);
+      }
+
+      a {
+        color: var(--accent);
+        text-decoration: none;
+      }
+
+      a:hover {
+        color: var(--accent-hover);
+        text-decoration: underline;
+      }
+
+      .wrap {
+        width: min(100%, var(--max));
+        margin: 0 auto;
+        padding: 32px 20px 64px;
+      }
+
+      header {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        gap: 16px;
+        margin-bottom: 36px;
+      }
+
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+      }
+
+      .brand img {
+        width: 48px;
+        height: 48px;
+        flex-shrink: 0;
+      }
+
+      .brand h1 {
+        margin: 0 0 4px;
+        font-size: 1.35rem;
+        font-weight: 700;
+        line-height: 1.2;
+      }
+
+      .brand p {
+        margin: 0;
+        color: var(--muted);
+        font-size: 0.875rem;
+      }
+
+      .lang-switch {
+        display: flex;
+        gap: 4px;
+        padding: 4px;
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: 10px;
+        flex-shrink: 0;
+      }
+
+      .lang-switch button {
+        border: 0;
+        background: transparent;
+        color: var(--muted);
+        font: inherit;
+        font-size: 0.8125rem;
+        font-weight: 600;
+        padding: 6px 12px;
+        border-radius: 7px;
+        cursor: pointer;
+        transition: background 0.15s, color 0.15s;
+      }
+
+      .lang-switch button:hover {
+        color: var(--text);
+      }
+
+      .lang-switch button.active {
+        background: var(--surface-2);
+        color: var(--accent);
+      }
+
+      nav.toc {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-bottom: 32px;
+      }
+
+      nav.toc a {
+        display: inline-block;
+        padding: 8px 14px;
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: 999px;
+        font-size: 0.875rem;
+        font-weight: 500;
+        text-decoration: none;
+      }
+
+      nav.toc a:hover {
+        border-color: rgba(0, 255, 180, 0.35);
+        text-decoration: none;
+      }
+
+      .card {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: 14px;
+        padding: 28px 24px;
+        margin-bottom: 24px;
+      }
+
+      .card h2 {
+        margin: 0 0 6px;
+        font-size: 1.25rem;
+        font-weight: 700;
+      }
+
+      .updated {
+        margin: 0 0 20px;
+        color: var(--muted);
+        font-size: 0.8125rem;
+      }
+
+      .card h3 {
+        margin: 24px 0 8px;
+        font-size: 1rem;
+        font-weight: 600;
+      }
+
+      .card p {
+        margin: 0 0 12px;
+      }
+
+      .card ul {
+        margin: 0 0 12px;
+        padding-left: 1.25rem;
+      }
+
+      .card li {
+        margin-bottom: 6px;
+      }
+
+      .closing {
+        margin-top: 20px;
+        padding-top: 16px;
+        border-top: 1px solid var(--border);
+        color: var(--muted);
+        font-size: 0.875rem;
+      }
+
+      .contact {
+        margin-top: 8px;
+        font-weight: 500;
+      }
+
+      footer {
+        margin-top: 16px;
+        text-align: center;
+        color: var(--muted);
+        font-size: 0.8125rem;
+      }
+
+      [data-lang] {
+        display: none;
+      }
+
+      [data-lang].visible {
+        display: block;
+      }
+
+      nav.toc a {
+        display: inline-block;
+      }
+
+      @media (max-width: 560px) {
+        header {
+          flex-direction: column;
+        }
+
+        .card {
+          padding: 22px 18px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <header>
+        <div class="brand">
+          <img src="public/icons/icon-128.svg" width="48" height="48" alt="" />
+          <div>
+            <h1>Page Refresh Pro</h1>
+            <p id="tagline">Otomatik sekme yenileme ve sayfa izleme eklentisi</p>
+          </div>
+        </div>
+        <div class="lang-switch" role="group" aria-label="Dil seçimi" id="lang-group-label">
+          <button type="button" data-set-lang="tr" class="active">TR</button>
+          <button type="button" data-set-lang="en">EN</button>
+        </div>
+      </header>
+
+      <nav class="toc" aria-label="İçindekiler" id="toc-nav">
+        <a href="#privacy" id="link-privacy">Gizlilik Politikası</a>
+        <a href="#terms" id="link-terms">Hizmet Koşulları</a>
+      </nav>
+
+      <!-- Privacy Policy -->
+      <section id="privacy" class="card" aria-labelledby="privacy-title-tr">
+        <div data-lang="tr" class="visible">
+          <h2 id="privacy-title-tr">Gizlilik Politikası</h2>
+          <p class="updated">Son güncelleme: 5 Temmuz 2026</p>
+          <p>
+            Bu Gizlilik Politikası, Page Refresh Pro'nun ("Eklenti") verilerle nasıl ilişki kurduğunu açıklar.
+            Geliştirici olarak kişisel verilerinizi toplamıyor, satmıyor veya pazarlama amacıyla paylaşmıyoruz.
+          </p>
+
+          <h3>1. Topladığımız veri yoktur</h3>
+          <p>
+            Eklenti, adınız, e-postanız, konumunuz veya tarama geçmişiniz gibi kişisel bilgileri sunucularımıza
+            göndermez. Kullanım istatistiği, reklam kimliği veya analitik takip de yapılmaz.
+          </p>
+
+          <h3>2. Yalnızca cihazınızda saklanan ayarlar</h3>
+          <p>Aşağıdaki bilgiler yalnızca tarayıcınızın yerel depolama alanında (chrome.storage.local) tutulur:</p>
+          <ul>
+            <li>Dil ve genel eklenti tercihleri</li>
+            <li>Alan adına özel yenileme ve izleme ayarları</li>
+            <li>Aktif otomatik yenileme oturumları (sekme kimliği, aralık, durum)</li>
+          </ul>
+          <p>
+            Bu veriler yalnızca eklentinin çalışması için gereklidir, cihazınızdan dışarı aktarılmaz ve geliştirici
+            tarafından uzaktan okunamaz.
+          </p>
+
+          <h3>3. İzinlerin kullanımı</h3>
+          <p>
+            Eklenti; sekmeleri yenilemek, sayfa içeriğini izlemek ve hedef seçmek için tarayıcı izinlerini kullanır.
+            Bu işlemler yerelde gerçekleşir. Ziyaret ettiğiniz sayfalara yalnızca siz bir özelliği etkinleştirdiğinizde
+            müdahale edilir.
+          </p>
+
+          <h3>4. Üçüncü taraf web siteleri</h3>
+          <p>
+            Eklentiyi kullandığınız sitelerin kendi gizlilik uygulamaları geçerlidir. Bu sitelerin topladığı verilerden
+            sorumlu değiliz.
+          </p>
+
+          <h3>5. Verilerin silinmesi</h3>
+          <p>
+            Eklentiyi kaldırdığınızda veya tarayıcı verilerini temizlediğinizde yerel depolamadaki ayarlar ve oturum
+            bilgileri silinir. Sunucularımızda saklanan bir kopya bulunmaz.
+          </p>
+
+          <h3>6. Politika değişiklikleri</h3>
+          <p>
+            Bu metni zaman zaman güncelleyebiliriz. Güncelleme tarihi sayfanın üstünde yer alır. Değişiklikten sonra
+            kullanmaya devam etmeniz güncel metni kabul ettiğiniz anlamına gelir.
+          </p>
+
+          <h3>7. İletişim</h3>
+          <p>Gizlilikle ilgili sorularınız için bizimle iletişime geçebilirsiniz:</p>
+          <p class="contact"><a href="mailto:me@liqutch.dev">me@liqutch.dev</a></p>
+
+          <p class="closing">
+            Page Refresh Pro'yu kullanarak bu Gizlilik Politikasını okuduğunuzu ve anladığınızı kabul etmiş olursunuz.
+          </p>
+        </div>
+
+        <div data-lang="en">
+          <h2 id="privacy-title-en">Privacy Policy</h2>
+          <p class="updated">Last updated: July 5, 2026</p>
+          <p>
+            This Privacy Policy explains how Page Refresh Pro (the "Extension") handles data. As the developer, we do
+            not collect, sell, or share your personal information for marketing purposes.
+          </p>
+
+          <h3>1. We do not collect your data</h3>
+          <p>
+            The Extension does not send personal information—such as your name, email, location, or browsing history—to
+            our servers. We do not run analytics, ad tracking, or usage profiling.
+          </p>
+
+          <h3>2. Settings stored only on your device</h3>
+          <p>The following information is kept only in your browser's local storage (chrome.storage.local):</p>
+          <ul>
+            <li>Language and general extension preferences</li>
+            <li>Per-domain refresh and monitor settings</li>
+            <li>Active auto-refresh sessions (tab id, interval, status)</li>
+          </ul>
+          <p>
+            This data exists solely to operate the Extension. It is not transmitted off your device and cannot be read
+            remotely by the developer.
+          </p>
+
+          <h3>3. How permissions are used</h3>
+          <p>
+            The Extension uses browser permissions to refresh tabs, monitor page content, and pick targets. Processing
+            happens locally. Pages are only accessed when you enable a feature.
+          </p>
+
+          <h3>4. Third-party websites</h3>
+          <p>
+            Websites you visit have their own privacy practices. We are not responsible for data those sites may collect.
+          </p>
+
+          <h3>5. Deleting your data</h3>
+          <p>
+            When you uninstall the Extension or clear browser data, local settings and session information are removed.
+            We do not retain copies on our servers.
+          </p>
+
+          <h3>6. Policy updates</h3>
+          <p>
+            We may update this policy from time to time. The revision date appears at the top. Continued use after an
+            update means you accept the current policy.
+          </p>
+
+          <h3>7. Contact</h3>
+          <p>For privacy-related questions, you can reach us at:</p>
+          <p class="contact"><a href="mailto:me@liqutch.dev">me@liqutch.dev</a></p>
+
+          <p class="closing">
+            By using Page Refresh Pro, you acknowledge that you have read and understood this Privacy Policy.
+          </p>
+        </div>
+      </section>
+
+      <!-- Terms of Service -->
+      <section id="terms" class="card" aria-labelledby="terms-title-tr">
+        <div data-lang="tr" class="visible">
+          <h2 id="terms-title-tr">Hizmet Koşulları</h2>
+          <p class="updated">Son güncelleme: 5 Temmuz 2026</p>
+          <p>
+            Page Refresh Pro, tarayıcınızda çalışan bağımsız bir eklentidir. Aşağıdaki koşullar, eklentiyi kurduğunuzda
+            veya kullandığınızda aramızdaki anlaşmayı oluşturur. Devam etmeniz, bu metni okuduğunuz ve kabul ettiğiniz
+            anlamına gelir.
+          </p>
+
+          <h3>Tamamen ücretsiz</h3>
+          <p>
+            Page Refresh Pro, herkesin kullanabilmesi için ücretsiz olarak geliştirilmiştir. Abonelik, ücretli sürüm
+            veya uygulama içi satın alma yoktur; eklenti kar amacı gütmeksizin sunulur ve böyle kalmayı hedefler.
+          </p>
+
+          <h3>Page Refresh Pro tam olarak ne yapar?</h3>
+          <p>
+            Sekmeleri belirlediğiniz sürelerle yeniler; sayfa içeriğinde değişiklik izlemenize, XHR hedefi seçmenize,
+            görsel geri sayım göstermenize ve alan adına özel ayar saklamanıza olanak tanır. Tüm bu işlemler
+            tarayıcınızda, sizin başlattığınız oturumlar üzerinden yürür. Özellik ekleyebilir, değiştirebilir veya
+            kaldırabiliriz; her sürümün ömür boyu aynı kalacağını taahhüt etmiyoruz.
+          </p>
+
+          <h3>Nasıl kullanmalısınız?</h3>
+          <p>
+            Eklenti size kolaylık sağlamak içindir; başkalarına zarar vermek veya kuralları dolanmak için değil.
+            Özellikle şunları yapmamanız gerekir:
+          </p>
+          <ul>
+            <li>Yürürlükteki kanunlara aykırı veya başkalarını aldatmaya yönelik işlemler</li>
+            <li>Bir siteye saniyede yüzlerce istek göndererek sunucuyu zorlamak</li>
+            <li>Captcha, bot koruması veya erişim sınırlarını bilerek aşmaya çalışmak</li>
+            <li>Ziyaret ettiğiniz sitenin kullanım şartlarını ihlal edecek otomasyon kurmak</li>
+            <li>Eklentiyi izinsiz kopyalayıp kendi ürününüz gibi sunmak</li>
+          </ul>
+          <p>
+            Kurallara uymayan kullanım tespit edilirse, gelecekteki güncellemelerde erişimi kısıtlayabilir veya
+            desteği sonlandırabiliriz.
+          </p>
+
+          <h3>Marka ve kaynak kod</h3>
+          <p>
+            Page Refresh Pro adı, arayüzü, logosu ve yazılımı geliştiriciye aittir. Eklentiyi yeniden paketleyemez,
+            kaynak kodunu çözmeye çalışamaz veya izinsiz ticari amaçla dağıtamazsınız.
+          </p>
+
+          <h3>Ziyaret ettiğiniz siteler</h3>
+          <p>
+            Eklenti yalnızca sizin açtığınız sekmelerde çalışır; ancak o sitelerin içeriği, güvenliği ve politikaları
+            tamamen site sahiplerine aittir. Bir sayfada yaşanan kesinti, veri kaybı veya hesap kısıtlamasından Page
+            Refresh Pro sorumlu tutulamaz.
+          </p>
+
+          <h3>Garanti vermiyoruz</h3>
+          <p>
+            Eklenti olduğu gibi sunulur. Her sitede aynı şekilde çalışacağını, izleme sonuçlarının her zaman doğru
+            olacağını veya kesintisiz devam edeceğini garanti etmiyoruz. Kritik işleriniz için tek güvence olarak
+            kullanmamanızı öneririz.
+          </p>
+
+          <h3>Sorumluluğun sınırı</h3>
+          <p>
+            Yasaların izin verdiği azami ölçüde; dolaylı zararlar, kâr kaybı, veri kaybı veya üçüncü taraf sitelerden
+            doğan sorunlar için geliştiriciye rücu edilemez. Eklentiyi kendi inisiyatifinizle ve riskinizle kullanırsınız.
+          </p>
+
+          <h3>Kullanımı bırakmak</h3>
+          <p>
+            İstediğiniz zaman eklentiyi kaldırarak kullanımı sonlandırabilirsiniz. Koşulları ağır şekilde ihlal eden
+            kullanımlarda, yasal zorunluluk halinde veya güvenlik gerekçesiyle desteği durdurma hakkımız saklıdır.
+          </p>
+
+          <h3>Bu metin değişebilir</h3>
+          <p>
+            Koşulları ve eklenti özelliklerini güncelleyebiliriz. Üstteki tarih en son revizyonu gösterir.
+            Güncellemeden sonra eklentiyi kullanmaya devam etmeniz, yeni metni kabul ettiğiniz anlamına gelir.
+          </p>
+
+          <h3>Hukuk</h3>
+          <p>
+            Uyuşmazlıklarda, geliştiricinin faaliyet gösterdiği ülke hukuku esas alınır; tüketici olarak bulunduğunuz
+            ülkedeki zorunlu haklarınız saklıdır.
+          </p>
+
+          <h3>Soru ve geri bildirim</h3>
+          <p>Bu koşullar hakkında yazmak isterseniz:</p>
+          <p class="contact"><a href="mailto:me@liqutch.dev">me@liqutch.dev</a></p>
+
+          <p class="closing">
+            Page Refresh Pro'yu kullanarak yukarıdaki Hizmet Koşulları'na uyacağınızı beyan etmiş olursunuz.
+          </p>
+        </div>
+
+        <div data-lang="en">
+          <h2 id="terms-title-en">Terms of Service</h2>
+          <p class="updated">Last updated: July 5, 2026</p>
+          <p>
+            Page Refresh Pro is an independent browser extension. The terms below form our agreement when you install
+            or use it. By continuing, you confirm that you have read and accept them.
+          </p>
+
+          <h3>Completely free</h3>
+          <p>
+            Page Refresh Pro was built so everyone can use it at no cost. There is no subscription, paid tier, or in-app
+            purchase—the Extension is offered without profit motive and is meant to stay that way.
+          </p>
+
+          <h3>What Page Refresh Pro actually does</h3>
+          <p>
+            It refreshes tabs on schedules you set, helps you watch page content for changes, pick XHR targets, show an
+            on-page countdown, and remember per-domain settings. Everything runs inside your browser from sessions you
+            start. We may add, change, or remove features; we do not promise that every version will behave the same
+            forever.
+          </p>
+
+          <h3>How you should use it</h3>
+          <p>
+            The Extension is meant to save you time—not to harm others or skirt rules. In particular, do not:
+          </p>
+          <ul>
+            <li>Break applicable laws or run deceptive schemes</li>
+            <li>Hammer a site with excessive automated requests</li>
+            <li>Deliberately try to bypass CAPTCHA, bot checks, or rate limits</li>
+            <li>Automate actions that violate a website's own terms of use</li>
+            <li>Repackage the Extension and pass it off as your own product</li>
+          </ul>
+          <p>If we identify serious misuse, we may limit support or access in future releases.</p>
+
+          <h3>Brand and source code</h3>
+          <p>
+            The Page Refresh Pro name, interface, logo, and software belong to the developer. You may not redistribute
+            it, attempt to reverse-engineer it, or sell it without permission.
+          </p>
+
+          <h3>Sites you visit</h3>
+          <p>
+            The Extension only runs on tabs you open, but each website's content, security, and policies remain that
+            site's responsibility. Outages, account limits, or data issues on a page are not attributable to Page
+            Refresh Pro.
+          </p>
+
+          <h3>No warranties</h3>
+          <p>
+            The Extension is provided as-is. We do not warrant flawless operation on every site, perfect monitoring
+            accuracy, or uninterrupted uptime. Do not rely on it as your only safeguard for critical tasks.
+          </p>
+
+          <h3>Limit of liability</h3>
+          <p>
+            To the maximum extent allowed by law, the developer is not liable for indirect damages, lost profits, lost
+            data, or problems originating on third-party websites. You use the Extension at your own discretion and risk.
+          </p>
+
+          <h3>Stopping use</h3>
+          <p>
+            You can uninstall at any time. We may discontinue support for severe violations, legal requirements, or
+            security reasons.
+          </p>
+
+          <h3>This document may change</h3>
+          <p>
+            We may revise these terms and the Extension itself. The date above shows the latest revision. Continued use
+            after an update means you accept the new text.
+          </p>
+
+          <h3>Governing law</h3>
+          <p>
+            Disputes are handled under the laws of the developer's country of operation, without prejudice to mandatory
+            consumer rights where you live.
+          </p>
+
+          <h3>Questions and feedback</h3>
+          <p>To reach us about these terms:</p>
+          <p class="contact"><a href="mailto:me@liqutch.dev">me@liqutch.dev</a></p>
+
+          <p class="closing">
+            By using Page Refresh Pro, you agree to follow the Terms of Service above.
+          </p>
+        </div>
+      </section>
+
+      <footer>
+        <p id="footer-copy">© 2026 Page Refresh Pro</p>
+      </footer>
+    </div>
+
+    <script>
+      const STORAGE_KEY = 'prp-site-lang';
+
+      const UI = {
+        tr: {
+          tagline: 'Otomatik sekme yenileme ve sayfa izleme eklentisi',
+          navPrivacy: 'Gizlilik Politikası',
+          navTerms: 'Hizmet Koşulları',
+          documentTitle: 'Page Refresh Pro — Gizlilik ve Koşullar',
+          metaDescription:
+            'Page Refresh Pro Chrome eklentisi gizlilik politikası ve hizmet koşulları.',
+          langGroupLabel: 'Dil seçimi',
+          tocLabel: 'İçindekiler',
+        },
+        en: {
+          tagline: 'Auto-refresh tabs and monitor page changes',
+          navPrivacy: 'Privacy Policy',
+          navTerms: 'Terms of Service',
+          documentTitle: 'Page Refresh Pro — Privacy & Terms',
+          metaDescription:
+            'Privacy Policy and Terms of Service for the Page Refresh Pro Chrome extension.',
+          langGroupLabel: 'Language',
+          tocLabel: 'Contents',
+        },
+      };
+
+      function setLanguage(lang) {
+        const copy = UI[lang];
+        document.documentElement.lang = lang;
+        document.title = copy.documentTitle;
+
+        const meta = document.querySelector('meta[name="description"]');
+        if (meta) {
+          meta.setAttribute('content', copy.metaDescription);
+        }
+
+        document.getElementById('tagline').textContent = copy.tagline;
+        document.getElementById('link-privacy').textContent = copy.navPrivacy;
+        document.getElementById('link-terms').textContent = copy.navTerms;
+        document.getElementById('lang-group-label').setAttribute('aria-label', copy.langGroupLabel);
+        document.getElementById('toc-nav').setAttribute('aria-label', copy.tocLabel);
+
+        document.querySelectorAll('[data-lang]').forEach((el) => {
+          el.classList.toggle('visible', el.getAttribute('data-lang') === lang);
+        });
+        document.querySelectorAll('[data-set-lang]').forEach((btn) => {
+          btn.classList.toggle('active', btn.getAttribute('data-set-lang') === lang);
+        });
+
+        try {
+          localStorage.setItem(STORAGE_KEY, lang);
+        } catch {
+          /* ignore */
+        }
+      }
+
+      document.querySelectorAll('[data-set-lang]').forEach((btn) => {
+        btn.addEventListener('click', () => setLanguage(btn.getAttribute('data-set-lang')));
+      });
+
+      const saved = (() => {
+        try {
+          return localStorage.getItem(STORAGE_KEY);
+        } catch {
+          return null;
+        }
+      })();
+
+      if (saved === 'en' || saved === 'tr') {
+        setLanguage(saved);
+      } else {
+        setLanguage('tr');
+      }
+    </script>
+  </body>
+</html>

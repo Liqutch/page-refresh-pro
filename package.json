@@ -1,0 +1,37 @@
+{
+  "name": "page-refresh-pro",
+  "version": "1.0.0",
+  "description": "Chrome MV3 extension for auto-refreshing tabs, monitoring page changes, and XHR target clicking. Privacy-first, local storage only.",
+  "license": "MIT",
+  "author": "Page Refresh Pro (me@liqutch.dev)",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "icons:transparent": "node scripts/make-logo-transparent.mjs public/icons/logo.png",
+    "preview": "vite preview"
+  },
+  "keywords": [
+    "chrome-extension",
+    "manifest-v3",
+    "auto-refresh",
+    "page-monitor",
+    "xhr",
+    "productivity"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/YOUR_USERNAME/page-refresh-pro.git"
+  },
+  "bugs": {
+    "url": "https://github.com/YOUR_USERNAME/page-refresh-pro/issues"
+  },
+  "homepage": "https://github.com/YOUR_USERNAME/page-refresh-pro#readme",
+  "devDependencies": {
+    "@crxjs/vite-plugin": "^2.7.1",
+    "@types/chrome": "^0.2.2",
+    "sharp": "^0.35.3",
+    "typescript": "^5.9.3",
+    "vite": "^7.1.4"
+  }
+}

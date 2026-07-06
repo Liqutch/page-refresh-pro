@@ -1,0 +1,12 @@
+node_modules/
+dist/
+.cursor/
+*.log
+.DS_Store
+Thumbs.db
+.env
+.env.*
+*.zip
+*.pem
+*.crx
+public/icons/logo-source.png
