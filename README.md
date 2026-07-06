@@ -13,6 +13,8 @@ Manifest V3 tabanlı, tamamen yerel çalışan Chrome eklentisi. Sekmeleri otoma
 - **Akıllı kontroller:** Captcha/hata algılama, yenileme limiti, görsel geri sayım
 - **Alan adına özel ayarlar** ve Türkçe/İngilizce arayüz
 
+<img width="378" height="599" alt="1" src="https://github.com/user-attachments/assets/ae1cffdb-0491-4836-9308-de1503933fbb" /> <img width="378" height="598" alt="2" src="https://github.com/user-attachments/assets/fa40f5e3-170e-4152-a545-cd141766acd9" />
+
 ## Hızlı başlangıç
 
 ```bash
