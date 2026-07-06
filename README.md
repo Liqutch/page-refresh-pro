@@ -82,4 +82,4 @@ Load the `dist` folder via `chrome://extensions` → Developer mode → Load unp
 
 ### License
 
-MIT — see [LICENSE](LICENSE). Privacy policy and terms: [index.html](index.html).
+MIT — see [LICENSE](LICENSE). Privacy policy and terms: https://liqutch.github.io/page-refresh-pro
