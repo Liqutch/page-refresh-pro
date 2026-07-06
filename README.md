@@ -1,10 +1,9 @@
-# Page Refresh Pro
-
+# <img src="public/icons/icon-128.png" width="40" height="40" alt="Page Refresh Pro" align="top"> Page Refresh Pro
 [![License: MIT](https://img.shields.io/badge/License-MIT-00ffb4.svg)](LICENSE)
 
 Manifest V3 tabanlı, tamamen yerel çalışan Chrome eklentisi. Sekmeleri otomatik yeniler, sayfa değişikliklerini izler ve XHR hedeflerine tıklar. Kişisel veri toplamaz; tüm ayarlar `chrome.storage.local` içinde kalır.
 
-[Privacy Policy & Terms](index.html) · [English](#english)
+[Privacy Policy & Terms](https://liqutch.github.io/page-refresh-pro/#privacy) · [English](#english)
 
 ## Özellikler
 
@@ -48,7 +47,7 @@ index.html        GitHub Pages: gizlilik ve hizmet koşulları
 
 ## Gizlilik
 
-Harici sunucu, hesap sistemi veya analytics yoktur. Ayarlar ve aktif oturumlar yalnızca tarayıcıda saklanır. Ayrıntılar: [index.html](index.html) veya yayınladıktan sonra `https://liqutch.github.io/page-refresh-pro`.
+Harici sunucu, hesap sistemi veya analytics yoktur. Ayarlar ve aktif oturumlar yalnızca tarayıcıda saklanır. Ayrıntılar: [index.html](https://liqutch.github.io/page-refresh-pro/).
 
 ## Katkı
 
@@ -56,7 +55,7 @@ Harici sunucu, hesap sistemi veya analytics yoktur. Ayarlar ve aktif oturumlar y
 2. Değişikliklerinizi yapın (`npm run build` ile doğrulayın)
 3. Pull request açın
 
-Marka adı **Page Refresh Pro** geliştiriciye aittir; izinsiz yeniden paketleyip kendi ürününüz gibi sunmayınız (bkz. [Hizmet Koşulları](index.html#terms)).
+Marka adı **Page Refresh Pro** geliştiriciye aittir; izinsiz yeniden paketleyip kendi ürününüz gibi sunmayınız (bkz. [Hizmet Koşulları](https://liqutch.github.io/page-refresh-pro/#terms)).
 
 ## Lisans
 
