@@ -225,11 +225,10 @@
         min-width: auto;
         padding: 8px 16px 8px 12px;
         color: #f1f3f4;
-        background: #f4f4f4;
+        background: rgba(255, 255, 255, 0.08);
         border: 0;
         border-radius: 999px;
         box-shadow: 0 8px 18px rgba(0, 0, 0, 0.14);
-        opacity: 0.62;
         user-select: none;
         -webkit-user-select: none;
       }
@@ -241,6 +240,7 @@
 
       .store-button:hover {
         color: #f1f3f4;
+        background: rgba(255, 255, 255, 0.12);
       }
 
       .store-button .store-copy,
@@ -507,11 +507,12 @@
             </p>
           </div>
           <div class="actions">
-            <a class="button primary" href="https://github.com/Liqutch/page-refresh-pro/releases" target="_blank" rel="noopener">
-              <span data-lang="tr" class="visible">GitHub ile yükle</span>
-              <span data-lang="en">Install from GitHub</span>
-            </a>
-            <span class="button disabled store-button" aria-disabled="true">
+            <a
+              class="button store-button"
+              href="https://chromewebstore.google.com/detail/jepknbngfbglnopannfpkdnldlndkljb"
+              target="_blank"
+              rel="noopener"
+            >
               <img
                 src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/Google_Chrome_Web_Store_icon_2022.svg/960px-Google_Chrome_Web_Store_icon_2022.svg.png"
                 width="86"
@@ -519,18 +520,18 @@
                 alt=""
               />
               <span class="store-copy" data-lang="tr" class="visible">
-                <small>Yakında</small>
-                <strong>Chrome Web Store'da</strong>
+                <small>Chrome Web Store'dan</small>
+                <strong>Yükle</strong>
               </span>
               <span class="store-copy" data-lang="en">
-                <small>Coming soon to the</small>
+                <small>Install from</small>
                 <strong>Chrome Web Store</strong>
               </span>
-            </span>
-            <p class="review-note">
-              <span data-lang="tr" class="visible">Eklenti henüz incelemede. Mağaza bağlantısı yayınlanınca aktif edilecek.</span>
-              <span data-lang="en">The extension is currently under review. The store link will be enabled after approval.</span>
-            </p>
+            </a>
+            <a class="button secondary" href="https://github.com/Liqutch/page-refresh-pro/releases" target="_blank" rel="noopener">
+              <span data-lang="tr" class="visible">GitHub ile yükle</span>
+              <span data-lang="en">Install from GitHub</span>
+            </a>
           </div>
         </div>
       </section>
